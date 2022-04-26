@@ -31,7 +31,7 @@
          *             HTTPGET:             Get Single Request
          *             HTTPPOST:            New Request 
          *             HTTPPOST/HTTPDELETE: Complete Request - this will add to completed DB and remove from in-flight DB 
-         *             HTTPPUT:             Favorite request - This will modify the angular view later
+         *             HTTPPATCH:           Favorite request - This will modify the angular view later
          *             HTTPGET:             Get All Favorited Requests
          * 
          */
