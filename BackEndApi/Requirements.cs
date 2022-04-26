@@ -22,7 +22,8 @@
          *             
          *             Time Stamp Request Submitted (system does this when user submits request)
          *             
-         *             Resolved By - Completed by the person who did the work, not the submiter
+         *             Assigned To - Completed by the person who did the work, not the submiter
+         *             Resolution Status (i.e. Completed, Not Completed, In Progress)
          *             Favorited (boolean y/n) - Completed by the person who did the work, not the submiter
          *             Time Stamp Request Resolved (system does this when the worker resolves the request)
          *             
@@ -32,6 +33,7 @@
          *             HTTPPOST:            New Request 
          *             HTTPPOST/HTTPDELETE: Complete Request - this will add to completed DB and remove from in-flight DB 
          *             HTTPPATCH:           Favorite request - This will modify the angular view later
+         *             HTTPPATCH:           Update Ticket with worker information
          *             HTTPGET:             Get All Favorited Requests
          * 
          */

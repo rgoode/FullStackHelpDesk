@@ -1,5 +1,43 @@
-Corn: 
+Corn:
 
 Kyle: At least 1 API service to access the backend program
 
 Rachel: Create at least three components and routing between them and app.module.html
+
+       Two databases: In-Flight DB
+                         Completed DB
+                         
+          DB Columns: 
+                      ID
+                      Request Title*
+                      Submitter Name*
+                      Problem*
+                      Solution*
+                      Priority Level (number)*
+                      
+                      Time Stamp Request Submitted (system does this when user submits request)
+                      
+                      Assigned To - Completed by the person who did the work, not the submiter
+                      Resolution Status (i.e. Completed, Not Completed, In Progress)
+                      Favorited (boolean y/n) - Completed by the person who did the work, not the submiter
+                      Time Stamp Request Resolved (system does this when the worker resolves the request)
+                      
+          Methods:
+                      HTTPGET:             Get All Requests
+                      HTTPGET:             Get Single Request
+                      HTTPPOST:            New Request 
+                      HTTPPOST/HTTPDELETE: Complete Request - this will add to completed DB and remove from in-flight DB 
+                      HTTPPATCH:           Favorite request - This will modify the angular view later
+                      HTTPPATCH:           Update Ticket with worker information
+                      HTTPGET:             Get All Favorited Requests
+          
+          Component Needed:
+                      Nav-Bar
+                            Routing to each of the below components
+                      All Tickets In Flight
+                      All Tickets Completed
+                      Favorite Ticket
+                      Single Ticket (user will to be able update ticket (i.e. close, assign to, reopen))
+                      New Request (needs to be a form)
+                      Log-In Screen (hold off until we figure out later in week)
+
