@@ -5,10 +5,11 @@ namespace BackEndApi.Services.DALModels
 {
     public class Users
     {
-        public int UserId { get; set; }
+        [key]
+        public int Id { get; set; }
         public string UserName { get; set; }
         public bool IsFavorite { get; set; }
 
-        public int ID { get; set; }
+        public int TicketID { get; set; }
     }
 }

@@ -1,11 +1,10 @@
-﻿using BackEndApi.Models.Ticket;
+using BackEndApi.Models.Ticket;
 using System.Collections.Generic;
 
 namespace BackEndApi.Services
 {
     public interface ITicketContext : IGetTickets, IGetTicket, IDeleteTicket
     {
-
     }
 
     public interface IDeleteTicket
@@ -23,3 +22,4 @@ namespace BackEndApi.Services
         IEnumerable<Tickets> GetTickets();
     }
 }
+
