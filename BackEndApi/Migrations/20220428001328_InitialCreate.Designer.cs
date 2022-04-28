@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BackEndApi.Migrations
 {
     [DbContext(typeof(TicketContext))]
-    [Migration("20220426170532_InitialCreate")]
+    [Migration("20220428001328_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,9 +21,9 @@ namespace BackEndApi.Migrations
                 .HasAnnotation("ProductVersion", "5.0.16")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("BackEndApi.Models.Ticket.ClosedTicket", b =>
+            modelBuilder.Entity("BackEndApi.Models.Ticket.Tickets", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -31,8 +31,8 @@ namespace BackEndApi.Migrations
                     b.Property<string>("AssignedTo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Favorited")
-                        .HasColumnType("bit");
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -52,51 +52,36 @@ namespace BackEndApi.Migrations
                     b.Property<string>("Solution")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("SubmittedTime")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
-                    b.ToTable("ClosedTickets");
+                    b.ToTable("Tickets");
                 });
 
-            modelBuilder.Entity("BackEndApi.Models.Ticket.OpenTicket", b =>
+            modelBuilder.Entity("BackEndApi.Services.DALModels.Users", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AssignedTo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("Favorited")
+                    b.Property<bool>("IsFavorite")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Priority")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Problem")
+                    b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("RequestTitle")
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("ID");
 
-                    b.Property<DateTime>("ResolvedTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Solution")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("SubmittedTime")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("OpenTickets");
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }
