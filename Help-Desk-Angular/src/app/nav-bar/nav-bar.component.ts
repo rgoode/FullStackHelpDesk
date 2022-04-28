@@ -8,6 +8,29 @@ import { Component, OnInit } from '@angular/core';
 export class NavBarComponent implements OnInit {
 
   constructor() { }
+  public routes = [
+    {
+      route: "",
+      text: "Home"
+    },
+    {
+      route: "",
+      text: "New Request"
+    },
+    {
+      route: "",
+      text: "Update A Ticket"
+    },
+    {
+      route: "",
+      text: "Completed Tickets"
+    },
+    {
+      route: "",
+      text: "All Tickets"
+    },
+
+  ]
 
   ngOnInit(): void {
   }
