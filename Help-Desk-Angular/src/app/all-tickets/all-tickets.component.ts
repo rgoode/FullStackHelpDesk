@@ -13,3 +13,5 @@ export class AllTicketsComponent implements OnInit {
   }
 
 }
+
+// METHOD FOR FAVORITE BUTTON / CLICK EVENT
