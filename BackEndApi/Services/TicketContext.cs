@@ -1,17 +1,19 @@
 ﻿using BackEndApi.Models.Ticket;
+using BackEndApi.Services.DALModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace BackEndApi.Services
 {
     public class TicketContext : DbContext, ITicketContext
     {
-        public DbSet<OpenTicket> OpenTickets { get; set; }
-        public DbSet<ClosedTicket> ClosedTickets { get; set; }
+        public DbSet<Tickets> Tickets { get; set; }
+        public DbSet<Users> Users { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-             @"Data Source=localhost;Initial Catalog=MovieDb;Integrated Security=True");
+             @"Data Source=localhost;Initial Catalog=TicketDB;Integrated Security=True");
         }
 
     }   
