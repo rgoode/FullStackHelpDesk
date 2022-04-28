@@ -5,12 +5,12 @@
         /*
          * Corn: Create services folder that will allow us to link this to the sql data base. You can use your sql server string
          *       This includes Services Folder with DAL Models folder in it and HelpDeskContext.cs  (DB context)
-         *       In DAL Models folder, HelpDeskTable.cs
+         *       In DAL Models folder, HelpDeskTable.cs - DONE
          *       
          * Kyle: Create at least two API controllers that http: get/post/put/delete (any others needed)
          * 
-         * Two databases: In-Flight DB
-         *                Completed DB
+         * Two tables:    Tickets TB - DONE
+         *                Users TB - DONE
          *                
          * DB Columns: 
          *             ID
