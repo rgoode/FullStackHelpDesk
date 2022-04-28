@@ -1,3 +1,4 @@
+using BackEndApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,8 +27,17 @@ namespace BackEndApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<ITicketContext, TicketContext>();
             services.AddControllers();
+            services.AddCors(corsOption =>
+            {
+                corsOption.AddDefaultPolicy(policy =>
+                {
+                    policy.AllowAnyHeader(); 
+                    policy.AllowAnyMethod(); 
+                    policy.AllowAnyOrigin(); 
+                });
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BackEndApi", Version = "v1" });
@@ -45,6 +55,8 @@ namespace BackEndApi
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors();
 
             app.UseRouting();
 
