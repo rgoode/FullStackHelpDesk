@@ -12,7 +12,7 @@
          * Two tables:    Tickets TB - DONE
          *                Users TB - DONE
          *                
-         * DB Columns: 
+         * DB Columns: - DONE
          *             ID
          *             Request Title*
          *             Submitter Name*
@@ -28,7 +28,7 @@
          *             Time Stamp Request Resolved (system does this when the worker resolves the request)
          *             
          * Methods:
-         *             HTTPGET:             Get All Requests
+         *             HTTPGET:             Get All Requests - DONE
          *             HTTPGET:             Get Single Request
          *             HTTPPOST:            New Request 
          *             HTTPPOST/HTTPDELETE: Complete Request - this will add to completed DB and remove from in-flight DB 

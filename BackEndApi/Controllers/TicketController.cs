@@ -28,12 +28,12 @@ namespace BackEndApi.Controllers
             return Ok(_ticketContext.GetTickets());
         }
 
-        [HttpGet]
-        public IActionResult GetTicket(int ticketId)
-        {
-            var dbTicket = Tickets.Find(ticketId);
+        //[HttpGet]
+        //public IActionResult GetTicket(int ticketId)
+        //{
+        //    var dbTicket = Tickets.Find(ticketId);
 
-            return dbTicket;
-        }
+        //    return dbTicket;
+        //}
     }
 }

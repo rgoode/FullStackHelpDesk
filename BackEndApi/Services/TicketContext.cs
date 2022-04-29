@@ -1,14 +1,22 @@
 ﻿using BackEndApi.Models.Ticket;
 using BackEndApi.Services.DALModels;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 
 namespace BackEndApi.Services
 {
     public class TicketContext : DbContext, ITicketContext, IDeleteTicket
     {
+        private readonly string _connectionString;
+
         public DbSet<Tickets> Tickets { get; set; }
         public DbSet<Users> Users { get; set; }
+
+        public TicketContext(IOptions<DBConfig> dbConfig)
+        {
+            _connectionString = dbConfig.Value.Default;
+        }
 
         public IEnumerable<Tickets> GetTickets()
         {
@@ -37,13 +45,11 @@ namespace BackEndApi.Services
 
 
 
-
-
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-             @"Data Source=localhost;Initial Catalog=TicketDB;Integrated Security=True");
+             //@"Data Source=localhost;Initial Catalog=TicketDB;Integrated Security=True"
+             this._connectionString );
         }
 
     }   
