@@ -15,7 +15,7 @@ namespace BackEndApi.Services
 
         public TicketContext(IOptions<DBConfig> dbConfig)
         {
-            _connectionString = dbConfig.Value.Default;
+            _connectionString = dbConfig.Value.Angular;
         }
 
         public IEnumerable<Tickets> GetTickets()
