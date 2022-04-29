@@ -6,12 +6,13 @@ using System.Collections.Generic;
 
 namespace BackEndApi.Services
 {
-    public class TicketContext : DbContext, ITicketContext, IDeleteTicket
+    public class TicketContext : DbContext, ITicketContext
     {
         private readonly string _connectionString;
 
         public DbSet<Tickets> Tickets { get; set; }
         public DbSet<Users> Users { get; set; }
+
 
         public TicketContext(IOptions<DBConfig> dbConfig)
         {
@@ -43,6 +44,12 @@ namespace BackEndApi.Services
             return null;
         }
 
+        public Tickets AddTicket(Tickets ticket)
+        {
+            var ticketEntity = Tickets.Add(ticket).Entity;
+            SaveChanges();
+            return ticketEntity;
+        }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -52,5 +59,22 @@ namespace BackEndApi.Services
              this._connectionString );
         }
 
+        public Tickets UpdateStudent(int id, Tickets tickets)
+        {
+            var dbTickets = Tickets.Find(id);
+
+            // if the student is NOT null, this means the student exist in the database by id
+            if (dbTickets != null)
+            {
+                dbTickets.SubjectLine = tickets.SubjectLine;
+                dbTickets.SubmitterName = tickets.SubmitterName;
+
+                var entityStudent = Tickets.Update(dbTickets).Entity;
+                SaveChanges();
+                return entityStudent;
+            }
+
+            return null;
+        }
     }   
 }

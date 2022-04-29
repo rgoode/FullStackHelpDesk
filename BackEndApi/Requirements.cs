@@ -36,6 +36,23 @@
          *             HTTPPATCH:           Update Ticket with worker information
          *             HTTPGET:             Get All Favorited Requests
          * 
+         * 
+         * Form For Requestor:
+         *      Requestor Name:
+         *      Requestor Email:
+         *      Subject Line:
+         *      What is the problem?
+         *      Submitted Time (auto generated)
+         * 
+         * Form For Technician (User):
+         *      Assigned To:
+         *      Priority:
+         *      Status:
+         *      Solution:
+         *      Time Resolved (auto generated)
+         * 
+         *         
+         * 
          */
 
 
