@@ -7,19 +7,19 @@ import { TickethomeComponent } from './tickethome/tickethome.component';
 
 const routes: Routes = [
   {
-    path: "",
+    path: "tickethome",
     component: TickethomeComponent
   },
   {
-    path:"",
+    path:"all-tickets",
     component: AllTicketsComponent
   },
   {
-    path:"",
+    path:"new-request-form",
     component:NewRequestFormComponent
   },
   {
-    path:"",
+    path:"completed",
     component: CompletedTicketsComponent
   },
 ];

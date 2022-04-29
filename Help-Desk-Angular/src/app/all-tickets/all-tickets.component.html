@@ -1,3 +1,22 @@
 <p>all-tickets works!</p>
 
-list all tickets in DB
+<!-- <ul *ngIf="tickets.length > 0; else waitingForStudents">
+
+    <li *ngFor="let student of students">
+        <div>
+        <p>name: 
+            <a [routerLink]="['/student', student.studentId]">{{student.name}}</a>
+            <button (click)="deleteStudent(student.studentId)">❌</button>
+        </p>
+        </div>
+    </li>
+    
+    </ul>
+    
+    <ng-template #waitingForStudents>
+        <p>getting students...</p>
+    </ng-template>
+
+
+click ticket route to single ticket view
+list all tickets in DB -->
