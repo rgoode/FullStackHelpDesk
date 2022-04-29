@@ -2,6 +2,6 @@
 {
     public class DBConfig
     {
-        public string Default { get; set; }
+        public string Angular { get; set; }
     }
 }
