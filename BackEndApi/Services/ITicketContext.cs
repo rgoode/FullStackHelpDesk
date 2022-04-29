@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BackEndApi.Services
 {
-    public interface ITicketContext : IGetTickets, IGetTicket, IDeleteTicket
+    public interface ITicketContext : IGetTickets, IGetTicket, IDeleteTicket, IAddTicket
     {
     }
 
@@ -20,6 +20,11 @@ namespace BackEndApi.Services
     public interface IGetTickets
     {
         IEnumerable<Tickets> GetTickets();
+    }
+
+    public interface IAddTicket
+    {
+        Tickets AddTicket(Tickets ticket);
     }
 }
 
