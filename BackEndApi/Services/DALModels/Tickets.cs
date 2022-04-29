@@ -1,12 +1,14 @@
 ﻿using BackEndApi.Services.DALModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BackEndApi.Models.Ticket
 {
     public class Tickets
     {
-        public int ID { get; set; }
+        [Key]
+        public int TicketID { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string RequestTitle { get; set; }
