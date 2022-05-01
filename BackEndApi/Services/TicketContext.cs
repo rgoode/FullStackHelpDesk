@@ -51,6 +51,27 @@ namespace BackEndApi.Services
             return ticketEntity;
         }
 
+        public Tickets UpdateTicket(Tickets ticket, int ticketID)
+        {
+            var dbTicket = Tickets.Find(ticketID);
+            if (dbTicket != null)
+            {
+                dbTicket.SubjectLine = ticket.SubjectLine;
+                dbTicket.SubmitterName = ticket.SubmitterName;
+                dbTicket.SubmitterEmail = ticket.SubmitterEmail;
+                dbTicket.Problem = ticket.Problem;
+
+                dbTicket.Solution = ticket.Solution;
+                dbTicket.AssignedTo = ticket.AssignedTo;
+                dbTicket.Status = ticket.Status;
+                dbTicket.Priority = ticket.Priority;
+
+                var entityTicket = Tickets.Update(dbTicket).Entity;
+                SaveChanges();
+                return entityTicket;
+            }
+                return null;
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -59,22 +80,5 @@ namespace BackEndApi.Services
              this._connectionString );
         }
 
-        public Tickets UpdateStudent(int id, Tickets tickets)
-        {
-            var dbTickets = Tickets.Find(id);
-
-            // if the student is NOT null, this means the student exist in the database by id
-            if (dbTickets != null)
-            {
-                dbTickets.SubjectLine = tickets.SubjectLine;
-                dbTickets.SubmitterName = tickets.SubmitterName;
-
-                var entityStudent = Tickets.Update(dbTickets).Entity;
-                SaveChanges();
-                return entityStudent;
-            }
-
-            return null;
-        }
     }   
 }

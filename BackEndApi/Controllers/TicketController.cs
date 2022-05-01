@@ -30,7 +30,7 @@ namespace BackEndApi.Controllers
         }
 
         [HttpGet]
-        [Route("{TicketID}")]
+        [Route("{ticketId}")]
         public IActionResult GetTicket([FromRoute] int ticketId)
         {
             var ticket = _ticketContext.GetTicket(ticketId);
@@ -42,7 +42,7 @@ namespace BackEndApi.Controllers
         }
 
         [HttpDelete]
-        [Route("{TicketID}")]
+        [Route("{ticketId}")]
         public IActionResult DeleteTicket([FromRoute] int ticketId)
         {
             var ticket = _ticketContext.DeleteTicket(ticketId);
@@ -58,19 +58,43 @@ namespace BackEndApi.Controllers
         {
             var ticket = new Tickets();
 
-            ticket.SubjectLine = postTicketRequest.RequestTitle;
+            ticket.SubjectLine = postTicketRequest.SubjectLine;
             ticket.SubmitterEmail = postTicketRequest.SubmitterEmail;
             ticket.SubmittedTime = System.DateTime.UtcNow;
             ticket.Problem = postTicketRequest.Problem;
 
-            ticket.AssignedTo = null;
+            ticket.AssignedTo = "UnAssigned";
             ticket.Priority = 4;
             ticket.Status = "In Progress";
-            ticket.Solution = null;
+            ticket.Solution = "None";
 
             var dbTicket = _ticketContext.AddTicket(ticket);
-
             return Created("I made you", dbTicket);
+        }
+
+        [HttpPut]
+        [Route("{ticketID}")]
+        public IActionResult UpdateTicket([FromBody] PostTicketRequest postTicketRequest, [FromRoute] int ticketID)
+        {
+            var ticket = new Tickets();
+            ticket.SubjectLine = postTicketRequest.SubjectLine;
+            ticket.SubmitterName = postTicketRequest.SubmitterName;
+            ticket.SubmitterEmail = postTicketRequest.SubmitterEmail;
+            ticket.Problem = postTicketRequest.Problem;
+
+            ticket.Solution = postTicketRequest.Solution;
+            ticket.AssignedTo = postTicketRequest.AssignedTo;
+            ticket.Priority = postTicketRequest.Priority;
+            ticket.Status = postTicketRequest.Status;
+
+            var dbTicket = _ticketContext.UpdateTicket(ticket, ticketID );
+
+            if (dbTicket == null)
+            {
+                return NotFound($"{nameof(ticketID)}: {ticketID} does not exist");
+            }
+
+            return Created($"https://localhost:5001/{dbTicket.TicketID}", dbTicket);
         }
     }
 }
