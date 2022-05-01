@@ -14,7 +14,7 @@ export class NavBarComponent implements OnInit {
       text: "Home"
     },
     {
-      route: "",
+      route: "tickethome",
       text: "New Request"
     },
     {
@@ -26,8 +26,8 @@ export class NavBarComponent implements OnInit {
       text: "Completed Tickets"
     },
     {
-      route: "",
-      text: "All Tickets"
+      route: "all-tickets",
+      text: "All The Tickets"
     },
 
   ]
