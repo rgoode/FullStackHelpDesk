@@ -7,7 +7,7 @@ import { TickethomeComponent } from './tickethome/tickethome.component';
 
 const routes: Routes = [
   {
-    path: "tickethome",
+    path: "",
     component: TickethomeComponent
   },
   {

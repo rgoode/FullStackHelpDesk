@@ -1,12 +1,10 @@
-<p>nav-bar works!</p>
 <nav>
-	<ul>
+	<ul class="navigation">
 		<li *ngFor="let route of routes">
 			<a [routerLink]="route.route">{{route.text}}</a>
 		</li>
 	</ul>
 </nav>
-
 
 <!-- Routing to each of the below components
 

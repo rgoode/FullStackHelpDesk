@@ -10,6 +10,7 @@ import { FavoriteComponent } from './favorite/favorite.component';
 import { TicketUpdateComponent } from './ticket-update/ticket-update.component';
 import { NewRequestFormComponent } from './new-request-form/new-request-form.component';
 import { TickethomeComponent } from './tickethome/tickethome.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TickethomeComponent } from './tickethome/tickethome.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
