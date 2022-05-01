@@ -7,7 +7,7 @@ namespace BackEndApi.Services.Models
         public int TicketID { get; set; }
         public string SubmitterName { get; set; }
         public string SubmitterEmail { get; set; }
-        public string RequestTitle { get; set; }
+        public string SubjectLine { get; set; }
         public string Problem { get; set; }
         public DateTime SubmittedTime { get; set; } = DateTime.UtcNow;
         public string Solution { get; set; }

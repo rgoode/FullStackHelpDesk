@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BackEndApi.Services
 {
-    public interface ITicketContext : IGetTickets, IGetTicket, IDeleteTicket, IAddTicket
+    public interface ITicketContext : IGetTickets, IGetTicket, IDeleteTicket, IAddTicket, IUpdateTicket
     {
     }
 
@@ -25,6 +25,11 @@ namespace BackEndApi.Services
     public interface IAddTicket
     {
         Tickets AddTicket(Tickets ticket);
+    }
+
+    public interface IUpdateTicket
+    {
+        Tickets UpdateTicket(Tickets ticket, int ticketID);
     }
 }
 
