@@ -5,7 +5,7 @@
     <li *ngFor="let ticket of tickets">
         <div>
         <p>name: 
-            <a [routerLink]="['/ticket', ticket.ticketId]">{{tickets.subject}}</a>
+            <a [routerLink]="['/ticket', ticket.ticketId]">{{ticket.subject}}</a>
             <button (click)="favoriteTicket(ticket.ticketId)">*</button> 
                 
         </p>

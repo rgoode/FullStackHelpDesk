@@ -1,15 +1,19 @@
 <div class="home">
     <div class="home-header">
-        <h1>All The Tickets In The World</h1>
+        <h1>How Can We Help?</h1>
     </div>
+
+    <button type = "ticket">Submit Your Request Here!</button>
+    <button type = "admin">Admin Log In </button>
+
+    
     <div class="ticket-list">
         <ul *ngIf="tickets.length > 0; else waitingForTickets">
             
             <li *ngFor="let ticket of tickets">
                 <div>
                     <p>name: 
-                        <a [routerLink]="['/tickets', ticket.ticketId]">{{ticket.submitterName}}</a>
-                        <!-- <button (click)="deleteStudent(student.studentId)">❌</button> -->
+                        <a [routerLink]="['/tickets', ticket.ticketId]">{{ticket.subject}}</a>
                     </p>
                 </div>
             </li>
@@ -19,3 +23,6 @@
         </ng-template>
     </div>
 </div>
+
+
+2 BUTTONS SUBMIT YOUR PROBLEM OR ADMIN LOG IN
