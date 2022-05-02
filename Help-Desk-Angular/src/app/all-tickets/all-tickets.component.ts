@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Tickets } from '../models/Tickets';
 import { TicketsService } from '../tickets.service';
+import { switchMap } from 'rxjs';
+
 
 @Component({
   selector: 'app-all-tickets',
@@ -19,6 +21,14 @@ export class AllTicketsComponent implements OnInit {
     this.ticketClientService.getTickets().subscribe(tickets => {
       this.tickets = tickets;
     })
+  }
+
+  favoriteTicket(id: number){
+    this.ticketClientService.favoriteTicket(id).pipe(
+      switchMap(() => this.ticketClientService.getTickets())
+    ).subscribe(tickets =>{
+      this.tickets = tickets
+    });
   }
 
 }
