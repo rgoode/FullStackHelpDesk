@@ -1,3 +1,27 @@
 <p>ticket-update works!</p>
 
 user will to be able update ticket (i.e. close, assign to, reopen
+
+<form FormGroup="updateTicketFormGroup" (submit)="updateTicket()">
+    <div>
+		<label>Priority:(High/ Low)</label>
+        <!-- possible drop down?? -->
+		<input type="number" formControlName="priority">
+	</div>
+    <div>
+		<label>Assigned To:</label>
+		<input type="text" formControlName="assignedTo">
+	</div>
+    <div>
+		<label>Solution/Response:</label>
+		<input type="text" formControlName="solution">
+	</div>
+    <div>
+		<label>Status: (Completed/ Pending/ Junk)</label>
+		<input type="text" formControlName="status">
+	</div>
+
+    <div>
+        <button type="submit">Submit Updates</button>
+    </div>
+</form>

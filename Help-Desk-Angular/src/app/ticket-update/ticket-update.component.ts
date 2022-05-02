@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { PutTicket } from '../models/User';
+import { TicketsService } from '../tickets.service';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-ticket-update',
@@ -7,9 +11,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TicketUpdateComponent implements OnInit {
 
-  constructor() { }
+  // ---ASK JAMES---
+
+  constructor(private _usersService: UsersService) { }  
+  updateTicketFormGroup = new FormGroup({
+    priority: new FormControl(''),
+    assignedTo: new FormControl(''),
+    solution: new FormControl(''),
+    status: new FormControl(''),
+    resolvedTime: new FormControl('')
+  })
+
+  updateTicket() {
+    const putTicket: PutTicket = this.updateTicketFormGroup.value;
+    this._usersService.putTicket(putTicket).subscribe();
+  }
+
+
+  // constructor(private _ticketsService: TicketsService) { }  
+  // updateTicketFormGroup = new FormGroup({
+  //   priority: new FormControl(''),
+  //   assignedTo: new FormControl(''),
+  //   solution: new FormControl(''),
+  //   status: new FormControl(''),
+  //   resolvedTime: new FormControl('')
+  // })
+
+  // updateTicket() {
+  //   const putTicket: PutTicket = this.updateTicketFormGroup.value;
+  //   this._ticketClientService.putTicket(putTicket).subscribe();
+  // }
 
   ngOnInit(): void {
   }
+
 
 }
