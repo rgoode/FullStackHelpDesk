@@ -12,7 +12,7 @@
          * Two tables:    Tickets TB - DONE
          *                Users TB - DONE
          *                
-         * DB Columns: 
+         * DB Columns: - DONE
          *             ID
          *             Request Title*
          *             Submitter Name*
@@ -28,13 +28,30 @@
          *             Time Stamp Request Resolved (system does this when the worker resolves the request)
          *             
          * Methods:
-         *             HTTPGET:             Get All Requests
+         *             HTTPGET:             Get All Requests - DONE
          *             HTTPGET:             Get Single Request
          *             HTTPPOST:            New Request 
          *             HTTPPOST/HTTPDELETE: Complete Request - this will add to completed DB and remove from in-flight DB 
          *             HTTPPATCH:           Favorite request - This will modify the angular view later
          *             HTTPPATCH:           Update Ticket with worker information
          *             HTTPGET:             Get All Favorited Requests
+         * 
+         * 
+         * Form For Requestor:
+         *      Requestor Name:
+         *      Requestor Email:
+         *      Subject Line:
+         *      What is the problem?
+         *      Submitted Time (auto generated)
+         * 
+         * Form For Technician (User):
+         *      Assigned To:
+         *      Priority:
+         *      Status:
+         *      Solution:
+         *      Time Resolved (auto generated)
+         * 
+         *         
          * 
          */
 

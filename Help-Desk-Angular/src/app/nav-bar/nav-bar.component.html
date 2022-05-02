@@ -1,10 +1,15 @@
-<p>nav-bar works!</p>
+<nav>
+	<ul class="navigation">
+		<li *ngFor="let route of routes">
+			<a [routerLink]="route.route">{{route.text}}</a>
+		</li>
+	</ul>
+</nav>
 
-
-Routing to each of the below components
+<!-- Routing to each of the below components
 
 home-tickets(all)
 completed
 new-form
-update 
+update  -->
 

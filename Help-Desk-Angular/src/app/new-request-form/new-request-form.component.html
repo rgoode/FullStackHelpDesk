@@ -1,3 +1,26 @@
 <p>new-request-form works!</p>
 
-needs to be a form
+<form FormGroup="newRequestFormGroup" (submit)="submitTicket()">
+    <div>
+		<label>Name:</label>
+		<input type="text" formControlName="submitterName">
+	</div>
+    <div>
+		<label>Email:</label>
+		<input type="text" formControlName="submitterEmail">
+	</div>
+    <div>
+		<label>Subject:</label>
+		<input type="text" formControlName="subjectLine">
+	</div>
+    <div>
+		<label>Describe your request:</label>
+		<input type="text" formControlName="problem">
+	</div>
+
+    <div>
+        <button type="submit">Submit Request</button>
+    </div>
+</form>
+
+

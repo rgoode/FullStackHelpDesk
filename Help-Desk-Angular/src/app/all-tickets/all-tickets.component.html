@@ -1,3 +1,23 @@
 <p>all-tickets works!</p>
 
-list all tickets in DB
+<ul *ngIf="tickets.length > 0; else waitingForTickets">
+
+    <li *ngFor="let ticket of tickets">
+        <div>
+        <p>name: 
+            <a [routerLink]="['/ticket', ticket.ticketId]">{{tickets.subject}}</a>
+            <button (click)="favoriteTicket(ticket.ticketId)">*</button> 
+                
+        </p>
+        </div>
+    </li>
+    
+    </ul>
+    
+    <ng-template #waitingForTickets>
+        <p>collecting tickets...</p>
+    </ng-template> -->
+
+
+click ticket route to single ticket view
+list all tickets in DB -->

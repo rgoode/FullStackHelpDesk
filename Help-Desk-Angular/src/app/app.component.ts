@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TicketsService } from './tickets.service';
 
 @Component({
   selector: 'app-root',
