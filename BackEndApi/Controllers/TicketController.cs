@@ -15,8 +15,7 @@ namespace BackEndApi.Controllers
         public DbSet<Tickets> Tickets { get; set; }
         private readonly ITicketContext _ticketContext;
 
-
-        public TicketsController(ITicketContext ticketContext)
+public TicketsController(ITicketContext ticketContext)
         {
             _ticketContext = ticketContext;
         }
