@@ -6,6 +6,9 @@ import { PostTicket, Tickets } from './models/Tickets';
   providedIn: 'root'
 })
 export class TicketsService {
+  favoriteTicket(id: number) {
+    throw new Error('Method not implemented.');
+  }
 
   
   constructor(private httpClient: HttpClient) { }

@@ -21,7 +21,6 @@ export class NewRequestFormComponent implements OnInit {
   })
   submitTicket() {
     const postTicket: PostTicket = this.newTicketFormGroup.value;
-    // If you want the Observable to be resolved, you NEED TO subscribe to it.
     this._ticketsService.postTicket(postTicket).subscribe();
   }
 

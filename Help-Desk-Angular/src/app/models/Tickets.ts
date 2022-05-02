@@ -2,7 +2,7 @@ export interface Tickets{
     ticketId: number;
     submitterName: string;
     submitterEmail: string;
-    subjectLine: string;
+    subject: string;
     problem: string;
     solution: string;
 

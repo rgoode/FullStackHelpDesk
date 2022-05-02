@@ -1,21 +1,22 @@
 <p>all-tickets works!</p>
 
-<!-- <ul *ngIf="tickets.length > 0; else waitingForStudents">
+<ul *ngIf="tickets.length > 0; else waitingForTickets">
 
-    <li *ngFor="let student of students">
+    <li *ngFor="let ticket of tickets">
         <div>
         <p>name: 
-            <a [routerLink]="['/student', student.studentId]">{{student.name}}</a>
-            <button (click)="deleteStudent(student.studentId)">❌</button>
+            <a [routerLink]="['/ticket', ticket.ticketId]">{{tickets.subject}}</a>
+            <button (click)="favoriteTicket(ticket.ticketId)">*</button> 
+                
         </p>
         </div>
     </li>
     
     </ul>
     
-    <ng-template #waitingForStudents>
-        <p>getting students...</p>
-    </ng-template>
+    <ng-template #waitingForTickets>
+        <p>collecting tickets...</p>
+    </ng-template> -->
 
 
 click ticket route to single ticket view
