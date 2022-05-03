@@ -10,6 +10,8 @@ import { TicketUpdateComponent } from './ticket-update/ticket-update.component';
 import { NewRequestFormComponent } from './new-request-form/new-request-form.component';
 import { TickethomeComponent } from './tickethome/tickethome.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserLoginComponent } from './user-login/user-login.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FavoriteComponent,
     TicketUpdateComponent,
     NewRequestFormComponent,
-    TickethomeComponent
+    TickethomeComponent,
+    UserLoginComponent,
   ],
   imports: [
     BrowserModule,

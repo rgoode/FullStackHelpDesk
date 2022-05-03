@@ -3,6 +3,7 @@ import { Tickets } from '../models/Tickets';
 import { TicketsService } from '../tickets.service';
 import { switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { FavoriteComponent } from '../favorite/favorite.component';
 
 
 
@@ -19,10 +20,13 @@ export class AllTicketsComponent implements OnInit {
   constructor(private ticketClientService: TicketsService) { }
 
 
+  
+
   ngOnInit(): void {
     this.ticketClientService.getTickets().subscribe(tickets => {
       this.tickets = tickets;
     })
+    
   }
 
 

@@ -3,10 +3,16 @@
         <h1>How Can We Help?</h1>
     </div>
 
-    <!-- <a [routerLink]="['/newRequestForm']">Submit Your Request Here!</a> -->
+<<<<<<< HEAD
+    <a [routerLink]="['/newRequestForm']">Submit Your Request Here!</a>
 
     <button (click)="['/newRequestForm']" >Submit Your Request Here!</button>
     <button (click)="['/allTickets']" >Admin Log In</button>
+=======
+    <!-- <a [routerLink]="['/newRequestForm']">Submit Your Request Here!</a> -->
+    <button type="button" routerLink="new-request-form">Submit Your Request Here!</button>
+    <button type="button" routerLink="user-login">Admin Log In</button>
+>>>>>>> 0b2271ecfee96720cd4af445783e27251e92e2a6
   
    
 
@@ -17,15 +23,16 @@
             <li *ngFor="let ticket of tickets">
                 <div>
                     <p>Tickets: 
-                        <a [routerLink]="['/allTickets', ticket.ticketId]">{{ticket.subject}}</a>
+                        <a [routerLink]="['/allTickets', ticket.ticketId]">{{ticket.subject}}</a>  
                     </p>
                 </div>
             </li>
-        </ul> -->
+        </ul>
+    </div> -->
         <div>
             <ng-template #waitingForTickets>
                 <p>getting tickets...</p>
             </ng-template>
         </div>
-    <!-- </div> -->
+
 
