@@ -5,6 +5,7 @@ import { FavoriteComponent } from './favorite/favorite.component';
 import { NewRequestFormComponent } from './new-request-form/new-request-form.component';
 import { TicketUpdateComponent } from './ticket-update/ticket-update.component';
 import { TickethomeComponent } from './tickethome/tickethome.component';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: "favorite",
     component: FavoriteComponent
+  },
+  {
+    path: "user-login",
+    component: UserLoginComponent
   },
 ];
 
