@@ -12,9 +12,9 @@ namespace BackEndApi.Controllers
     public class UserController : ControllerBase
     {
         public DbSet<Users> Users { get; set; }
-        private readonly IUserContext _userContext;
+        private readonly ITicketContext _userContext;
 
-        public UserController(IUserContext userContext)
+        public UserController(ITicketContext userContext)
         {
             _userContext = userContext;
         }

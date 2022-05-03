@@ -1,4 +1,21 @@
 <p>favorite works!</p>
+<ul *ngIf="tickets.length > 0; else waitingForTickets">
+
+    <li *ngFor="let ticket of tickets">
+        <div>
+        <p>name: 
+            <a [routerLink]="['/ticket', ticket.ticketID]">{{ticket.subjectLine}}</a>
+            <button (click)="favoriteTickets(ticket.ticketID)">*</button> 
+                
+        </p>
+        </div>
+    </li>
+    
+    </ul>
+    
+    <ng-template #waitingForTickets>
+        <p>collecting tickets...</p>
+    </ng-template>
 
 
 

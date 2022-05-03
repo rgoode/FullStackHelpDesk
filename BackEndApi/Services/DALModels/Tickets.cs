@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BackEndApi.Models.Ticket
 {
@@ -20,6 +21,10 @@ namespace BackEndApi.Models.Ticket
         public string AssignedTo { get; set; }
         public string Status { get; set; }
         public DateTime ResolvedTime { get; set; }
+
+        //[ForeignKey("Users")]
+        //public int ID { get; set; }
+        public IEnumerable<Users> Users { get; set; }
 
     }
 }

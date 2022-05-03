@@ -15,7 +15,7 @@ namespace BackEndApi.Controllers
         public DbSet<Tickets> Tickets { get; set; }
         private readonly ITicketContext _ticketContext;
 
-public TicketsController(ITicketContext ticketContext)
+        public TicketsController(ITicketContext ticketContext)
         {
             _ticketContext = ticketContext;
         }
@@ -86,7 +86,7 @@ public TicketsController(ITicketContext ticketContext)
             ticket.Priority = postTicketRequest.Priority;
             ticket.Status = postTicketRequest.Status;
 
-            var dbTicket = _ticketContext.UpdateTicket(ticket, ticketID );
+            var dbTicket = _ticketContext.UpdateTicket(ticket, ticketID);
 
             if (dbTicket == null)
             {

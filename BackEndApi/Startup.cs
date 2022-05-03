@@ -28,7 +28,6 @@ namespace BackEndApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ITicketContext, TicketContext>();
-            services.AddDbContext<IUserContext, UserContext>();
             services.Configure<DBConfig>(Configuration.GetSection("ConnectionString"));
             services.AddControllers();
             services.AddCors(corsOption =>
