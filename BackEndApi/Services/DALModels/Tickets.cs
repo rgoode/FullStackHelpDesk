@@ -22,9 +22,9 @@ namespace BackEndApi.Models.Ticket
         public string Status { get; set; }
         public DateTime ResolvedTime { get; set; }
 
-        [ForeignKey("Users")]
-        public int ID { get; set; }
-        public IEnumerable<Users> Users{ get; set; }
+        //[ForeignKey("Users")]
+        //public int ID { get; set; }
+        public IEnumerable<Users> Users { get; set; }
 
     }
 }

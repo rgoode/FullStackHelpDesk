@@ -12,7 +12,6 @@ namespace BackEndApi.Services.DALModels
         public string UserName { get; set; }
         public bool IsFavorite { get; set; }
        
-
         [ForeignKey("Tickets")]
         public int TicketID { get; set; }
         public IEnumerable<Tickets> Tickets { get; set; }

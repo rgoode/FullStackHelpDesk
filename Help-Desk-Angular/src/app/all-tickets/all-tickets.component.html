@@ -1,13 +1,10 @@
-<p>all-tickets works!</p>
-
 <ul *ngIf="tickets.length > 0; else waitingForTickets">
 
     <li *ngFor="let ticket of tickets">
         <div>
         <p>name: 
-            <a [routerLink]="['/ticket', ticket.ticketId]">{{ticket.subject}}</a>
-            
-                
+            <a [routerLink]="['/ticket', ticket.ticketID]">{{ticket.submitterName}}</a>
+            <br>Click here to favorite/assign this ticket
         </p>
         </div>
     </li>
