@@ -4,9 +4,9 @@
 
     <li *ngFor="let ticket of tickets">
         <div>
-        <p>Tickets: 
+        <p>name: 
             <a [routerLink]="['/ticket', ticket.ticketId]">{{ticket.subject}}</a>
-            <!-- <button (click)="favoriteTicket(ticket.ticketId)"> * </button>  -->
+            <!--<button (click)="favoriteTicket(ticket.ticketId)">*</button> -->
                 
         </p>
         </div>
@@ -16,8 +16,8 @@
     
     <ng-template #waitingForTickets>
         <p>collecting tickets...</p>
-    </ng-template> -->
+    </ng-template>
 
 
 click ticket route to single ticket view
-list all tickets in DB -->
+list all tickets in DB

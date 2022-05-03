@@ -10,7 +10,7 @@ export class NavBarComponent implements OnInit {
   constructor() { }
   public routes = [
     {
-      route: "tickethome",
+      route: "",
       text: "Home"
     },
     {
