@@ -59,11 +59,10 @@ namespace BackEndApi.Services
             return Users;
         }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer(
-        //     //@"Data Source=localhost;Initial Catalog=TicketDB;Integrated Security=True"
-        //     this._connectionString);
-        //}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(
+             this._connectionString);
+        }
     }
 }
