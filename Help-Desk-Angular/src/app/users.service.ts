@@ -10,7 +10,7 @@ import { PutTicket } from './models/User';
 export class UsersService {
 
   constructor(private httpClient: HttpClient) { }
-  baseUrl = "https://localhost:5001/Tickets";
+  baseUrl = "https://localhost:5001/Users";
 
 
 

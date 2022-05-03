@@ -3,26 +3,29 @@
         <h1>How Can We Help?</h1>
     </div>
 
-    <button type = "ticket">Submit Your Request Here!</button>
-    <button type = "admin">Admin Log In </button>
+    <!-- <a [routerLink]="['/newRequestForm']">Submit Your Request Here!</a> -->
 
-    
-    <div class="ticket-list">
+    <button (click)="['/newRequestForm']" >Submit Your Request Here!</button>
+    <button (click)="['/allTickets']" >Admin Log In</button>
+  
+   
+
+
+    <!-- <div class="ticket-list">
         <ul *ngIf="tickets.length > 0; else waitingForTickets">
             
             <li *ngFor="let ticket of tickets">
                 <div>
-                    <p>name: 
-                        <a [routerLink]="['/tickets', ticket.ticketId]">{{ticket.subject}}</a>
+                    <p>Tickets: 
+                        <a [routerLink]="['/allTickets', ticket.ticketId]">{{ticket.subject}}</a>
                     </p>
                 </div>
             </li>
-        </ul>
-        <ng-template #waitingForTickets>
-            <p>getting students...</p>
-        </ng-template>
-    </div>
-</div>
+        </ul> -->
+        <div>
+            <ng-template #waitingForTickets>
+                <p>getting tickets...</p>
+            </ng-template>
+        </div>
+    <!-- </div> -->
 
-
-2 BUTTONS SUBMIT YOUR PROBLEM OR ADMIN LOG IN

@@ -10,25 +10,25 @@ export class NavBarComponent implements OnInit {
   constructor() { }
   public routes = [
     {
-      route: "",
+      route: "tickethome",
       text: "Home"
     },
     {
-      route: "tickethome",
+      route: "new-request-form",
       text: "New Request"
     },
     {
-      route: "",
+      route: "ticket-update",
       text: "Update A Ticket"
-    },
-    {
-      route: "",
-      text: "Completed Tickets"
     },
     {
       route: "all-tickets",
       text: "All The Tickets"
     },
+    {
+      route: "favorite",
+      text: "Favorites/Assigned"
+    }
 
   ]
 
