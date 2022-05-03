@@ -86,7 +86,7 @@ namespace BackEndApi.Controllers
             ticket.Priority = postTicketRequest.Priority;
             ticket.Status = postTicketRequest.Status;
 
-            var dbTicket = _ticketContext.UpdateTicket(ticket, ticketID );
+            var dbTicket = _ticketContext.UpdateTicket(ticket, ticketID);
 
             if (dbTicket == null)
             {
