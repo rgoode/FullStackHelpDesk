@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AllTicketsComponent } from './all-tickets/all-tickets.component';
+import { FavoriteComponent } from './favorite/favorite.component';
 import { NewRequestFormComponent } from './new-request-form/new-request-form.component';
 import { TicketUpdateComponent } from './ticket-update/ticket-update.component';
 import { TickethomeComponent } from './tickethome/tickethome.component';
@@ -19,8 +20,12 @@ const routes: Routes = [
     component:NewRequestFormComponent
   },
   {
-    path: "update-ticket",
+    path: "ticket-update",
     component: TicketUpdateComponent
+  },
+  {
+    path: "favorite",
+    component: FavoriteComponent
   },
 ];
 
