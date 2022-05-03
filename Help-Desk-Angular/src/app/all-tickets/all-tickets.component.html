@@ -4,9 +4,9 @@
 
     <li *ngFor="let ticket of tickets">
         <div>
-        <p>name: 
+        <p>Tickets: 
             <a [routerLink]="['/ticket', ticket.ticketId]">{{ticket.subject}}</a>
-            <button (click)="favoriteTicket(ticket.ticketId)">*</button> 
+            <!-- <button (click)="favoriteTicket(ticket.ticketId)"> * </button>  -->
                 
         </p>
         </div>
