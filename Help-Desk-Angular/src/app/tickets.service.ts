@@ -26,4 +26,8 @@ export class TicketsService {
     return this.httpClient.post<Tickets>(this.baseUrl, ticket);
   }
 
+  favoriteTickets(id: number){
+    return this.httpClient.put<Tickets>(this.baseUrl, id);
+  }
+
 }

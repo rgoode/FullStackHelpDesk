@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Tickets } from '../models/Tickets';
 import { TicketsService } from '../tickets.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tickethome',
@@ -13,8 +14,9 @@ export class TickethomeComponent implements OnInit {
 
    tickets: Tickets[] = [];
 
-  constructor(private ticketClientService: TicketsService) { }
-
+  constructor(private ticketClientService: TicketsService, router: Router) { }
+  
+  
   ngOnInit(): void {
     this.ticketClientService.getTickets().subscribe(tickets => {
       this.tickets = tickets;
