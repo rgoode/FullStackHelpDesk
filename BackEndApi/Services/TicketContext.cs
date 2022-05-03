@@ -26,7 +26,7 @@ namespace BackEndApi.Services
 
         public Tickets GetTicket(int ticketId)
         {
-            var dbTickets= Tickets.Find(ticketId);
+            var dbTickets = Tickets.Find(ticketId);
 
             return dbTickets;
         }
@@ -70,15 +70,61 @@ namespace BackEndApi.Services
                 SaveChanges();
                 return entityTicket;
             }
-                return null;
+            return null;
+        }
+
+        public Users GetUser(int userId)
+        {
+            var dbUsers = Users.Find(userId);
+
+            return dbUsers;
+        }
+
+        public Users DeleteUser(int userId)
+        {
+            var dbUsers = Users.Find(userId);
+
+            if (dbUsers != null)
+            {
+                var entity = Users.Remove(dbUsers).Entity;
+                SaveChanges();
+                return entity;
+            }
+            return null;
+        }
+
+        public Users AddUser(Users users)
+        {
+            Users userEntity = Users.Add(users).Entity;
+            SaveChanges();
+            return userEntity;
+        }
+
+        public Users UpdateUser(Users users, int userID)
+        {
+            var dbUsers = Users.Find(userID);
+            if (dbUsers != null)
+            {
+                //have to still what we are updating here
+
+                var entityUsers = Users.Update(dbUsers).Entity;
+                SaveChanges();
+                return entityUsers;
+            }
+            return null;
+        }
+
+        public IEnumerable<Users> GetUsers()
+        {
+            return Users;
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
              //@"Data Source=localhost;Initial Catalog=TicketDB;Integrated Security=True"
-             this._connectionString );
+             this._connectionString);
         }
 
-    }   
+    }
 }
