@@ -4,9 +4,8 @@
     </div>
 
     <!-- <a [routerLink]="['/newRequestForm']">Submit Your Request Here!</a> -->
-
-    <button (click)="['/newRequestForm']" >Submit Your Request Here!</button>
-    <button (click)="['/allTickets']" >Admin Log In</button>
+    <button type="button" routerLink="new-request-form">Submit Your Request Here!</button>
+    <button type="button" routerLink="user-login">Admin Log In</button>
   
    
 
@@ -17,7 +16,7 @@
             <li *ngFor="let ticket of tickets">
                 <div>
                     <p>Tickets: 
-                        <a [routerLink]="['/allTickets', ticket.ticketId]">{{ticket.subject}}</a>
+                        <a [routerLink]="['/allTickets', ticket.ticketId]">{{ticket.subject}}</a>  
                     </p>
                 </div>
             </li>
