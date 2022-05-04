@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Ticket } from '../models/Ticket';
+import { Tickets } from '../models/Tickets';
 import { TicketsService } from '../tickets.service';
 import { switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -17,7 +17,7 @@ export class AllTicketsComponent implements OnInit {
 
   tickets$ = this._ticketsService.getTickets();
 
-   tickets: Ticket[] = [];
+   tickets: Tickets[] = [];
 
   constructor(private _ticketsService: TicketsService) { }
 
