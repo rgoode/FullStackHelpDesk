@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 import { Tickets } from './models/Tickets';
 import { PutTicket, User } from './models/User';
 
-
-
 @Injectable({
   providedIn: 'root'
 })

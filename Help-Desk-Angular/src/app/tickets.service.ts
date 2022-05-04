@@ -27,6 +27,11 @@ export class TicketsService {
     return this.httpClient.put<Tickets>(this.baseUrl, id);
   }
 
+
+  favoriteTicket(id: number) {
+    throw new Error('Method not implemented.');
+  }
+
   getTicket(ticketID: number) {
     return this.httpClient.get<Tickets>(`${this.baseUrl}/${ticketID}`);
   }
