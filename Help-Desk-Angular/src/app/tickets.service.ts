@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PostTicket, Tickets } from './models/Tickets';
-import { PutTicket } from './models/User';
+import { PutTicket } from './models/Users';
 
 @Injectable({
   providedIn: 'root'
