@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { TicketsService } from '../tickets.service';
-import { PostTicket } from '../models/Ticket';
+import { PostTicket } from '../models/Tickets';
 
 @Component({
   selector: 'app-new-request-form',
