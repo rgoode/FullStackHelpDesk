@@ -4,6 +4,7 @@ import { switchMap } from 'rxjs';
 import { TicketsService } from '../tickets.service';
 import { RouterModule, Routes } from '@angular/router';
 import { TicketUpdateComponent } from '../ticket-update/ticket-update.component';
+import { PutTicket, Users } from '../models/Users';
 
 @Component({
   selector: 'app-all-tickets',
@@ -15,8 +16,10 @@ export class AllTicketsComponent implements OnInit {
 
   tickets$ = this._ticketsService.getTickets();
 
-   tickets: Tickets[] = [];
 
+  tickets: Tickets[] = [];
+
+  
   constructor(
     private _ticketsService: TicketsService) { }
 
@@ -40,4 +43,8 @@ export class AllTicketsComponent implements OnInit {
 
 
 
+
+function id(id: any) {
+  throw new Error('Function not implemented.');
+}
 // METHOD FOR FAVORITE BUTTON / CLICK EVENT

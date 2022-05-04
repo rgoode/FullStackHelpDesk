@@ -15,8 +15,8 @@
         <br>    
             
                 <button class="delete" (click)="deleteTicket(ticket.ticketID)">Delete</button>
-            
-                <button class="update" routerLink="ticket-update">Update</button>
+               
+                <button type ="update" [routerLink]="['/ticket-update']">Update</button>
 
             <br>Click here to favorite/assign this ticket
         

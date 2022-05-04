@@ -17,4 +17,4 @@ export interface Users {
   tickets: any
 }
 
-export type PutTicket = Omit<Users, "ticketId">;
+export type PutTicket = Omit<Users, "id">;
