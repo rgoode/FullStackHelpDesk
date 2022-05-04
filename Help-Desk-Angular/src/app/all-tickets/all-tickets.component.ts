@@ -30,6 +30,7 @@ export class AllTicketsComponent implements OnInit {
     ).subscribe(tickets => {
       this.tickets = tickets
     });
+
   }
 
 }

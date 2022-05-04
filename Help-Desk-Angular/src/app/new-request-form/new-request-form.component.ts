@@ -15,7 +15,7 @@ export class NewRequestFormComponent {
   newRequestFormGroup = new FormGroup({
     submitterName: new FormControl(''),
     submitterEmail: new FormControl(''),
-    subjecLine: new FormControl(''),
+    subjectLine: new FormControl(''),
     problem: new FormControl(''),
 
   })
