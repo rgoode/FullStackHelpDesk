@@ -1,8 +1,16 @@
-<div *ngIf="ticket$ | async as tickets; else gettingTicket">
-	<h1>Request Title: {{tickets.subjectLine}}</h1>
-	<h1>Submitter: {{tickets.subjectLine}}</h1>
+<div *ngIf="singleTicket$ | async as ticket; else gettingTicket">
+	<p>Name: {{ticket.submitterName}}</p>
+	<p>Subject: {{ticket.subjectLine}}</p>
+	<p>Submitter's Email: {{ticket.submitterEmail}}</p>
+	<p>Problem: {{ticket.problem}}</p>
+	<p>Time Ticket Was Submitted: {{ticket.submittedTime}}</p>
+	<p>Priority: {{ticket.priority}}</p>
+	<p>Assigned To: {{ticket.assignedTo}}</p>
+	<p>Ticket Status: {{ticket.status}}</p>
+	<p>Time Completed: {{ticket.resolvedTime}}</p>
+
 </div>
 
 <ng-template #gettingTicket>
-	<p>getting ticket, standby...</p>
+	<p>getting your ticket...</p>
 </ng-template>
