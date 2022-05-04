@@ -11,19 +11,19 @@
 
 export interface Users {
   id: number
-  userNames: Array<userNames>
-  // userNames: string
+  userName: string
+  // userNames: Array<string>
   isFavorite: boolean
   ticketID: number
   tickets: any
 }
-type userNames = Array<{text: string}>;
+// type userNames = Array<{text: string}>;
 
-const usersNames: string = [
-    {id: 1, text: 'Kyle'},
-    {id: 2, text: 'Corn'},
-    {id: 3, text: 'Rachel'},
-];
+// const usersNames: string = [
+//     {text: 'Kyle'},
+//     {text: 'Corn'},
+//     {text: 'Rachel'},
+// ];
 
 
 export type PutTicket = Omit<Users, "ticketId">;
