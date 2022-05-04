@@ -11,6 +11,7 @@ import { NewRequestFormComponent } from './new-request-form/new-request-form.com
 import { TickethomeComponent } from './tickethome/tickethome.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserLoginComponent } from './user-login/user-login.component';
+import { AngularEmojisModule } from 'angular-emojis';
 
 
 @NgModule({
@@ -23,14 +24,18 @@ import { UserLoginComponent } from './user-login/user-login.component';
     NewRequestFormComponent,
     TickethomeComponent,
     UserLoginComponent,
+    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularEmojisModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
