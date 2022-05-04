@@ -12,11 +12,14 @@
 export interface Users {
   id: number
   userName: string
+
   // userNames: Array<string>
+
   isFavorite: boolean
   ticketID: number
   tickets: any
 }
+
 // type userNames = Array<{text: string}>;
 
 // const usersNames: string = [
@@ -26,4 +29,4 @@ export interface Users {
 // ];
 
 
-export type PutTicket = Omit<Users, "ticketId">;
+export type PutTicket = Omit<Users, "id">;
