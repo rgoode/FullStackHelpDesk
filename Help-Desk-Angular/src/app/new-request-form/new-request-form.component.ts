@@ -3,16 +3,16 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { TicketsService } from '../tickets.service';
 import { PostTicket } from '../models/Tickets';
 
-
 @Component({
   selector: 'app-new-request-form',
   templateUrl: './new-request-form.component.html',
   styleUrls: ['./new-request-form.component.scss']
 })
-export class NewRequestFormComponent implements OnInit {
+export class NewRequestFormComponent {
 
   constructor(private _ticketsService: TicketsService) { }
-  newTicketFormGroup = new FormGroup({
+
+  newRequestFormGroup = new FormGroup({
     submitterName: new FormControl(''),
     submitterEmail: new FormControl(''),
     subjecLine: new FormControl(''),
@@ -20,12 +20,10 @@ export class NewRequestFormComponent implements OnInit {
 
   })
   submitTicket() {
-    const postTicket: PostTicket = this.newTicketFormGroup.value;
+    const postTicket: PostTicket = this.newRequestFormGroup.value;
     this._ticketsService.postTicket(postTicket).subscribe();
   }
 
 
-  ngOnInit(): void {
-  }
 
 }

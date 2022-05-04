@@ -6,11 +6,7 @@ import { PostTicket, Tickets } from './models/Tickets';
   providedIn: 'root'
 })
 export class TicketsService {
-  favoriteTicket(id: number) {
-    throw new Error('Method not implemented.');
-  }
 
-  
   constructor(private httpClient: HttpClient) { }
   baseUrl = "https://localhost:5001/Tickets";
 
@@ -30,4 +26,9 @@ export class TicketsService {
     return this.httpClient.put<Tickets>(this.baseUrl, id);
   }
 
+  favoriteTicket(id: number) {
+    throw new Error('Method not implemented.');
+  }
+
+  
 }

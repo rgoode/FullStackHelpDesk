@@ -11,13 +11,12 @@ import { FavoriteComponent } from '../favorite/favorite.component';
   styleUrls: ['./all-tickets.component.scss']
 })
 export class AllTicketsComponent implements OnInit {
-  
+
+  tickets$ = this._ticketsService.getTickets();
+
    tickets: Tickets[] = [];
 
   constructor(private _ticketsService: TicketsService) { }
-
-
-  
 
   ngOnInit(): void {
     this._ticketsService.getTickets().subscribe(tickets => {
