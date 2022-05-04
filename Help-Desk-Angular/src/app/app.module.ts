@@ -26,13 +26,9 @@ import { TicketComponent } from './ticket/ticket.component';
     NewRequestFormComponent,
     TickethomeComponent,
     UserLoginComponent,
-
-    
-
-
     TicketComponent,
-
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
