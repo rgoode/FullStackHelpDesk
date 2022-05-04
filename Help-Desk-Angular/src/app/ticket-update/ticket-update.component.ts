@@ -43,6 +43,7 @@ export class TicketUpdateComponent implements OnInit {
   // }
 
   ngOnInit(): void {
+    
   }
 
 
