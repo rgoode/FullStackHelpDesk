@@ -14,6 +14,7 @@
             Time Submitted: {{ticket.submittedTime}}
         <br>    
 <<<<<<< HEAD
+<<<<<<< HEAD
         
 =======
             
@@ -24,6 +25,10 @@
 
             <br>Click here to favorite/assign this ticket
         
+=======
+                <button class="delete" (click)="deleteTicket(ticket.ticketID)">Delete</button>
+                <button type ="update" [routerLink]="['/ticket-update']">Update</button>
+>>>>>>> 48f73de8a3d96d7fac0efb32db5047101d70aa89
         </div>
     </li>
     
@@ -32,7 +37,3 @@
     <ng-template #waitingForTickets>
         <p>collecting tickets...</p>
     </ng-template>
-
-
-click ticket route to single ticket view
-list all tickets in DB

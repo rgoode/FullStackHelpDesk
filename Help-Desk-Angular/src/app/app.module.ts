@@ -22,7 +22,7 @@ import { TicketComponent } from './ticket/ticket.component';
     NavBarComponent,
     AllTicketsComponent,
     FavoriteComponent,
-    TicketUpdateComponent,
+    TicketComponent,
     NewRequestFormComponent,
     TickethomeComponent,
     UserLoginComponent,

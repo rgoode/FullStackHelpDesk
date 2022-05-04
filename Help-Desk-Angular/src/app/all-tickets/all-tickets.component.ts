@@ -1,14 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Tickets } from '../models/Tickets';
 import { switchMap } from 'rxjs';
+<<<<<<< HEAD
 import { HttpClient } from '@angular/common/http';
 import { FavoriteComponent } from '../favorite/favorite.component';
 import { UsersService } from '../users.service';
+=======
+>>>>>>> 48f73de8a3d96d7fac0efb32db5047101d70aa89
 import { TicketsService } from '../tickets.service';
 import { RouterModule, Routes } from '@angular/router';
 import { TicketUpdateComponent } from '../ticket-update/ticket-update.component';
 import { PutTicket, Users } from '../models/Users';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 48f73de8a3d96d7fac0efb32db5047101d70aa89
 
 @Component({
   selector: 'app-all-tickets',

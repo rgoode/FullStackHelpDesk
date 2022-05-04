@@ -1,10 +1,24 @@
+<<<<<<< HEAD
 <div *ngIf="ticket$ | async as tickets; else gettingTicket">
 	<h1>Request Title: {{tickets.subjectLine}}</h1>
 	<h1>Submitter Email: {{tickets.submitterEmail}}</h1>
 	<h1>Request Description: {{tickets.problem}}</h1>
+=======
+<div *ngIf="singleTicket$ | async as ticket; else gettingTicket">
+	<p>Name: {{ticket.submitterName}}</p>
+	<p>Subject: {{ticket.subjectLine}}</p>
+	<p>Submitter's Email: {{ticket.submitterEmail}}</p>
+	<p>Problem: {{ticket.problem}}</p>
+	<p>Time Ticket Was Submitted: {{ticket.submittedTime}}</p>
+	<p>Priority: {{ticket.priority}}</p>
+	<p>Assigned To: {{ticket.assignedTo}}</p>
+	<p>Ticket Status: {{ticket.status}}</p>
+	<p>Time Completed: {{ticket.resolvedTime}}</p>
+
+>>>>>>> 48f73de8a3d96d7fac0efb32db5047101d70aa89
 </div>
 <button [routerLink]="['/ticket-update']">Update Ticket</button>
 
 <ng-template #gettingTicket>
-	<p>getting ticket, standby...</p>
+	<p>getting your ticket...</p>
 </ng-template>
