@@ -5,9 +5,6 @@ import { switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { FavoriteComponent } from '../favorite/favorite.component';
 
-
-
-
 @Component({
   selector: 'app-all-tickets',
   templateUrl: './all-tickets.component.html',
@@ -17,13 +14,13 @@ export class AllTicketsComponent implements OnInit {
   
    tickets: Tickets[] = [];
 
-  constructor(private ticketClientService: TicketsService) { }
+  constructor(private _ticketsService: TicketsService) { }
 
 
   
 
   ngOnInit(): void {
-    this.ticketClientService.getTickets().subscribe(tickets => {
+    this._ticketsService.getTickets().subscribe(tickets => {
       this.tickets = tickets;
     })
     

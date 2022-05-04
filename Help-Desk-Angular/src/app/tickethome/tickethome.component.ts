@@ -10,15 +10,15 @@ import { Router } from '@angular/router';
 })
 export class TickethomeComponent implements OnInit {
 
-  tickets$ = this.ticketClientService.getTickets();
+  tickets$ = this.ticketsService.getTickets();
 
    tickets: Tickets[] = [];
 
-  constructor(private ticketClientService: TicketsService, router: Router) { }
+  constructor(private ticketsService: TicketsService, router: Router) { }
   
   
   ngOnInit(): void {
-    this.ticketClientService.getTickets().subscribe(tickets => {
+    this.ticketsService.getTickets().subscribe(tickets => {
       this.tickets = tickets;
     })
   }
