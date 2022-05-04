@@ -1,7 +1,9 @@
 <div *ngIf="ticket$ | async as tickets; else gettingTicket">
 	<h1>Request Title: {{tickets.subjectLine}}</h1>
-	<h1>Submitter: {{tickets.subjectLine}}</h1>
+	<h1>Submitter Email: {{tickets.submitterEmail}}</h1>
+	<h1>Request Description: {{tickets.problem}}</h1>
 </div>
+<button [routerLink]="['/ticket-update']">Update Ticket</button>
 
 <ng-template #gettingTicket>
 	<p>getting ticket, standby...</p>

@@ -4,8 +4,10 @@ import { TicketsService } from '../tickets.service';
 import { switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { FavoriteComponent } from '../favorite/favorite.component';
-
 import { TicketUpdateComponent } from '../ticket-update/ticket-update.component';
+import { Users } from '../models/Users';
+import { UsersService } from '../users.service';
+
 
 @Component({
   selector: 'app-all-tickets',
@@ -27,6 +29,7 @@ export class AllTicketsComponent implements OnInit {
     })
     
   }
+
 
   deleteTicket(id: number) {
     this._ticketsService.deleteTicket(id).pipe(
