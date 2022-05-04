@@ -2,6 +2,7 @@
 
     <li *ngFor="let ticket of tickets">
         <div>
+
             Name: <a [routerLink]="['/ticket', ticket.ticketID]">{{ticket.submitterName}}</a>
         <br>
             Email: {{ticket.submitterEmail}}

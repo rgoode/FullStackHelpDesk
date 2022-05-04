@@ -2,22 +2,25 @@
 
 <form [formGroup]="newRequestFormGroup" (submit)="submitTicket()">
     <div>
-		<label>Name:</label>
+		<label>Name: </label>
 		<input type="text" formControlName="submitterName">
 	</div>
+	<br>
     <div>
-		<label>Email:</label>
+		<label>Email: </label>
 		<input type="text" formControlName="submitterEmail">
 	</div>
+	<br>
     <div>
-		<label>Subject:</label>
+		<label>Subject: </label>
 		<input type="text" formControlName="subjectLine">
 	</div>
+	<br>
     <div>
-		<label>Describe your request:</label>
+		<label>Describe your request: </label>
 		<input type="text" formControlName="problem">
 	</div>
-
+	<br>
     <div>
         <button type="submit" (click)="reloadCurrentPage()">Submit Request</button>
     </div>
