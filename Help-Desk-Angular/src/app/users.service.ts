@@ -1,13 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
-import { Ticket } from './models/Ticket';
-import { PutTicket, User } from './models/User';
 
-=======
 import { Tickets } from './models/Tickets';
 import { PutTicket, Users } from './models/Users';
->>>>>>> 667b3bc50d12cf3dd5d98630d80c275708777a74
 
 
 

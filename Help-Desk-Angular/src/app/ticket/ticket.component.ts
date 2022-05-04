@@ -11,16 +11,16 @@ import { TicketsService } from '../tickets.service';
 export class TicketComponent implements OnInit {
 
   constructor(
-    private _activatedRoute: ActivatedRoute,
-    private _ticetClientService: TicketsService
+    private _activatedRoute: ActivatedRoute, 
+    private _ticketClientService: TicketsService
   ) { }
 
-  ticket$ = this._activatedRoute.paramMap.pipe( 
-    map(params => params.get('ticketID')),  
-    filter(ticketID => ticketID !== null), 
-    map(ticketID => parseInt(ticketID as string, 10)), 
-    switchMap((ticketID: number) => this._ticetClientService.getTicket(ticketID)), 
-  )
+  singleTicket$ = this._activatedRoute.paramMap.pipe(
+    map(params => params.get('id')), 
+    filter(id => id !== null), 
+    map(id => parseInt(id as string, 10)), 
+    switchMap((id: number) => this._ticketClientService.getTicket(id)),
+  )  
 
   ngOnInit(): void {
   }

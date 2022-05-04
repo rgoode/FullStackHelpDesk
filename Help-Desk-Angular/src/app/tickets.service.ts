@@ -28,7 +28,7 @@ export class TicketsService {
   }
 
   getTicket(ticketID: number) {
-    return this.httpClient.get<Ticket>(`${this.baseUrl}/${ticketID}`);
+    return this.httpClient.get<Tickets>(`${this.baseUrl}/${ticketID}`);
   }
 
   putTicket(user: PutTicket) {
