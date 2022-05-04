@@ -1,13 +1,4 @@
-// export interface Tickets{
-//     ticketId: number;
-//     submitterName: string;
-//     submitterEmail: string;
-//     subject: string;
-//     problem: string;
-//     solution: string;
-// }
-
-export interface Tickets {
+export interface Ticket {
     ticketID: number;
     submitterName: string;
     submitterEmail: string;
@@ -24,4 +15,4 @@ export interface Tickets {
 
 
 
-export type PostTicket = Omit<Tickets, "ticketId">;
+export type PostTicket = Omit<Ticket, "ticketID">;

@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   {
     path:"new-request-form",
-    component:NewRequestFormComponent
+    component: NewRequestFormComponent
   },
   {
     path: "ticket-update",

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { switchMap } from 'rxjs';
-import { Tickets } from '../models/Tickets';
+import { Ticket } from '../models/Ticket';
 import { TicketsService } from '../tickets.service';
 
 @Component({
@@ -12,14 +12,14 @@ export class FavoriteComponent implements OnInit {
   
   tickets$ = this.ticketsService.favoriteTickets(0); 
   
-   tickets: Tickets[] = [];
+   tickets: Ticket[] = [];
 
   constructor(private ticketsService: TicketsService) { }
 
   favoriteTickets(id: number){
     this.ticketsService.favoriteTickets(id).pipe(
       switchMap(() => this.ticketsService.getTickets())
-    ).subscribe((tickets: Tickets[]) =>{
+    ).subscribe((tickets: Ticket[]) =>{
       this.tickets = tickets
     });
   }

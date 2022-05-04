@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Tickets } from '../models/Tickets';
+import { Ticket } from '../models/Ticket';
 import { TicketsService } from '../tickets.service';
 import { Router } from '@angular/router';
 
@@ -10,15 +10,15 @@ import { Router } from '@angular/router';
 })
 export class TickethomeComponent implements OnInit {
 
-  tickets$ = this.ticketsService.getTickets();
+  tickets$ = this._ticketsService.getTickets();
 
-   tickets: Tickets[] = [];
+   tickets: Ticket[] = [];
 
-  constructor(private ticketsService: TicketsService, router: Router) { }
+  constructor(private _ticketsService: TicketsService) { }
   
   
   ngOnInit(): void {
-    this.ticketsService.getTickets().subscribe(tickets => {
+    this._ticketsService.getTickets().subscribe(tickets => {
       this.tickets = tickets;
     })
   }
