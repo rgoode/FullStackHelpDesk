@@ -10,15 +10,15 @@ import { TicketsService } from '../tickets.service';
 })
 export class FavoriteComponent implements OnInit {
   
-  tickets$ = this.ticketClientService.favoriteTickets(0); 
+  tickets$ = this.ticketsService.favoriteTickets(0); 
   
    tickets: Tickets[] = [];
 
-  constructor(private ticketClientService: TicketsService) { }
+  constructor(private ticketsService: TicketsService) { }
 
   favoriteTickets(id: number){
-    this.ticketClientService.favoriteTickets(id).pipe(
-      switchMap(() => this.ticketClientService.getTickets())
+    this.ticketsService.favoriteTickets(id).pipe(
+      switchMap(() => this.ticketsService.getTickets())
     ).subscribe((tickets: Tickets[]) =>{
       this.tickets = tickets
     });
