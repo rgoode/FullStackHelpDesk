@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "angular-emojis": "^1.0.0"
+    "angular": "^1.8.3",
+    "angular-emojis": "^1.0.0",
+    "emojis": "^1.0.10"
   }
 }

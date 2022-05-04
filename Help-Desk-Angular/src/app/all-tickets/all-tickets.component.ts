@@ -4,7 +4,6 @@ import { TicketsService } from '../tickets.service';
 import { switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { FavoriteComponent } from '../favorite/favorite.component';
-import { AngularEmojisModule } from 'angular-emojis';
 import { TicketUpdateComponent } from '../ticket-update/ticket-update.component';
 
 @Component({
