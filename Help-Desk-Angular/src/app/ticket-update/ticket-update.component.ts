@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { PutTicket } from '../models/User';
+import { PutTicket } from '../models/Users';
 import { TicketsService } from '../tickets.service';
 import { UsersService } from '../users.service';
 
@@ -43,6 +43,7 @@ export class TicketUpdateComponent implements OnInit {
   // }
 
   ngOnInit(): void {
+    
   }
 
 

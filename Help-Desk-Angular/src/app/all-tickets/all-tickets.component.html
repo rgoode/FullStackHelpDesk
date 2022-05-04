@@ -13,9 +13,11 @@
         <br>
             Time Submitted: {{ticket.submittedTime}}
         <br>    
+            
+                <button class="delete" (click)="deleteTicket(ticket.ticketID)">Delete</button>
+               
+                <button type ="update" [routerLink]="['/ticket-update']">Update</button>
 
-            <button (click)="deleteTicket(ticket.ticketID)">Delete</button>
-             
             <br>Click here to favorite/assign this ticket
         
         </div>

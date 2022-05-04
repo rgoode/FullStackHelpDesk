@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { PostTicket, Ticket } from './models/Ticket';
+import { PostTicket, Tickets } from './models/Tickets';
+import { PutTicket } from './models/Users';
 
 @Injectable({
   providedIn: 'root'
@@ -11,30 +12,27 @@ export class TicketsService {
   baseUrl = "https://localhost:5001/Tickets";
 
   getTickets() {
-    return this.httpClient.get<Array<Ticket>>(this.baseUrl);
+    return this.httpClient.get<Array<Tickets>>(this.baseUrl);
   }
 
   deleteTicket(id: number) {
-    return this.httpClient.delete<Ticket>(`${this.baseUrl}/${id}`); //need to update the rest of the url for the ticket id
+    return this.httpClient.delete<Tickets>(`${this.baseUrl}/${id}`); //need to update the rest of the url for the ticket id
   }
 
   postTicket(ticket: PostTicket) {
-    return this.httpClient.post<Ticket>(this.baseUrl, ticket);
+    return this.httpClient.post<Tickets>(this.baseUrl, ticket);
   }
 
   favoriteTickets(id: number){
-    return this.httpClient.put<Ticket>(this.baseUrl, id);
+    return this.httpClient.put<Tickets>(this.baseUrl, id);
   }
-
-
-  favoriteTicket(id: number) {
-    throw new Error('Method not implemented.');
-  }
-
-  
 
   getTicket(ticketID: number) {
     return this.httpClient.get<Ticket>(`${this.baseUrl}/${ticketID}`);
+  }
+
+  putTicket(user: PutTicket) {
+    return this.httpClient.put<Tickets>(this.baseUrl, user);
   }
 
 }

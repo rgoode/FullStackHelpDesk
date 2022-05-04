@@ -1,4 +1,4 @@
-export interface Ticket {
+export interface Tickets {
     ticketID: number;
     submitterName: string;
     submitterEmail: string;
@@ -15,4 +15,4 @@ export interface Ticket {
 
 
 
-export type PostTicket = Omit<Ticket, "ticketID">;
+export type PostTicket = Omit<Tickets, "ticketID">;

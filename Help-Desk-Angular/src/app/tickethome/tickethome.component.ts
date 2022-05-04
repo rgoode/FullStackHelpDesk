@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Ticket } from '../models/Ticket';
+import { Tickets } from '../models/Tickets';
 import { TicketsService } from '../tickets.service';
 import { Router } from '@angular/router';
 
@@ -12,7 +12,7 @@ export class TickethomeComponent implements OnInit {
 
   tickets$ = this._ticketsService.getTickets();
 
-   tickets: Ticket[] = [];
+   tickets: Tickets[] = [];
 
   constructor(private _ticketsService: TicketsService) { }
   
