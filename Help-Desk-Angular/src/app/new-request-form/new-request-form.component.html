@@ -1,6 +1,6 @@
 <p>new-request-form works!</p>
 
-<form FormGroup="newRequestFormGroup" (submit)="submitTicket()">
+<form [formGroup]="newRequestFormGroup" (submit)="submitTicket()">
     <div>
 		<label>Name:</label>
 		<input type="text" formControlName="submitterName">
@@ -19,7 +19,7 @@
 	</div>
 
     <div>
-        <button type="submit">Submit Request</button>
+        <button type="submit" (click)="reloadCurrentPage()">Submit Request</button>
     </div>
 </form>
 

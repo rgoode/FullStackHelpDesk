@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { TicketsService } from '../tickets.service';
-import { PostTicket } from '../models/Tickets';
+import { PostTicket } from '../models/Ticket';
 
 @Component({
   selector: 'app-new-request-form',
@@ -23,6 +23,10 @@ export class NewRequestFormComponent {
     const postTicket: PostTicket = this.newRequestFormGroup.value;
     this._ticketsService.postTicket(postTicket).subscribe();
   }
+
+  reloadCurrentPage() {
+    window.location.reload();
+   }
 
 
 

@@ -3,7 +3,8 @@
     <li *ngFor="let ticket of tickets">
         <div>
         <p>name: 
-            <a [routerLink]="['/Tickets', ticket.ticketID]">{{ticket.submitterName}}</a>
+            <a [routerLink]="['/ticket', ticket.ticketID]">{{ticket.submitterName}}</a>
+            <button (click)="deleteTicket(ticket.ticketID)">❌</button>
               <br>Click here to favorite/assign this ticket
         </p>
         </div>

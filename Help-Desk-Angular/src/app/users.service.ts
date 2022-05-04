@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Tickets } from './models/Tickets';
+import { Ticket } from './models/Ticket';
 import { PutTicket } from './models/User';
 
 
@@ -15,7 +15,7 @@ export class UsersService {
 
 
   putTicket(user: PutTicket) {
-    return this.httpClient.put<Tickets>(this.baseUrl, user);
+    return this.httpClient.put<Ticket>(this.baseUrl, user);
   }
 
   

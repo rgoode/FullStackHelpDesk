@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Tickets } from '../models/Tickets';
+import { Ticket } from '../models/Ticket';
 import { TicketsService } from '../tickets.service';
 import { switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -14,7 +14,7 @@ export class AllTicketsComponent implements OnInit {
 
   tickets$ = this._ticketsService.getTickets();
 
-   tickets: Tickets[] = [];
+   tickets: Ticket[] = [];
 
   constructor(private _ticketsService: TicketsService) { }
 
@@ -24,7 +24,13 @@ export class AllTicketsComponent implements OnInit {
     })
     
   }
-
+  deleteTicket(id: number) {
+    this._ticketsService.deleteTicket(id).pipe(
+    switchMap(() => this._ticketsService.getTickets())
+    ).subscribe(tickets => {
+      this.tickets = tickets
+    });
+  }
 
 }
 
