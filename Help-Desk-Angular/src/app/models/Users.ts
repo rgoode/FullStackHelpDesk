@@ -9,7 +9,7 @@
 
 // }
 
-export interface User {
+export interface Users {
   id: number
   userName: string
   isFavorite: boolean
@@ -17,4 +17,4 @@ export interface User {
   tickets: any
 }
 
-export type PutTicket = Omit<User, "ticketId">;
+export type PutTicket = Omit<Users, "ticketId">;
