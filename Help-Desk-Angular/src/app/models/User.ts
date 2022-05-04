@@ -6,6 +6,7 @@
 //     solution: string;
 //     status: string;
 //     resolvedTime: number;
+
 // }
 
 export interface User {

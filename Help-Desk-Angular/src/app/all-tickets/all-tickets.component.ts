@@ -19,17 +19,12 @@ export class AllTicketsComponent implements OnInit {
 
   constructor(private _ticketsService: TicketsService) { }
 
-
-  
-
   ngOnInit(): void {
     this._ticketsService.getTickets().subscribe(tickets => {
       this.tickets = tickets;
     })
     
   }
-
-
 }
 
 

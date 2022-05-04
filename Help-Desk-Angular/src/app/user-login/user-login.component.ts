@@ -15,10 +15,9 @@ export class UserLoginComponent implements OnInit {
   userLoginFormGroup = new FormGroup({
     userName: new FormControl(''),
     password: new FormControl(''),
-
-
   })
 
+ 
   ngOnInit(): void {
   }
 

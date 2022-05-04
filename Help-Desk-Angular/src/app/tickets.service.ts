@@ -30,4 +30,8 @@ export class TicketsService {
     return this.httpClient.put<Tickets>(this.baseUrl, id);
   }
 
+  getTicket(ticketID: number) {
+    return this.httpClient.get<Tickets>(`${this.baseUrl}/${ticketID}`);
+  }
+
 }
