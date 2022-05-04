@@ -12,7 +12,6 @@ namespace BackEndApi.Controllers
 
     public class TicketsController : ControllerBase
     {
-        public DbSet<Tickets> Tickets { get; set; }
         private readonly ITicketContext _ticketContext;
 
         public TicketsController(ITicketContext ticketContext)
@@ -23,7 +22,7 @@ namespace BackEndApi.Controllers
         [HttpGet]
         public IActionResult GetAllTickets()
         {
-            var students = _ticketContext.GetTickets();
+            var tickets = _ticketContext.GetTickets();
 
             return Ok(_ticketContext.GetTickets());
         }
@@ -57,6 +56,7 @@ namespace BackEndApi.Controllers
         {
             var ticket = new Tickets();
 
+            ticket.SubmitterName = postTicketRequest.SubmitterName;
             ticket.SubjectLine = postTicketRequest.SubjectLine;
             ticket.SubmitterEmail = postTicketRequest.SubmitterEmail;
             ticket.SubmittedTime = System.DateTime.UtcNow;
