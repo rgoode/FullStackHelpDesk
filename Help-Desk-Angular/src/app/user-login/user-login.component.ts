@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Users } from '../models/Users';
 import { UsersService } from '../users.service';
+import { FavoriteComponent } from '../favorite/favorite.component';
 
 @Component({
   selector: 'app-user-login',
