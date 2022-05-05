@@ -20,7 +20,7 @@ export class TicketUpdateComponent implements OnInit {
     solution: new FormControl(''),
     status: new FormControl(''),
     resolvedTime: new FormControl('')
-  })
+  });
 
   updateTicket() {
     const putTicket: PutTicket = this.updateTicketFormGroup.value;
